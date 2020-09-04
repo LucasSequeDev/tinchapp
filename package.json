@@ -1,0 +1,29 @@
+{
+  "name": "backend-app-nodejs-mongodb-clases",
+  "version": "1.0.0",
+  "description": "Backend desarrollado con NodeJS + Express + MongoDB",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "nodemon src/index.js --exec babel-node --ignore __tests__",
+    "build": "babel src --out-dir dist",
+    "start": "node dist/index.js",
+    "test": "jest"
+  },
+  "author": "lucassequeiradev",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-validator": "^6.6.1",
+    "mongoose": "^5.10.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.10.5",
+    "@babel/core": "^7.11.4",
+    "@babel/node": "^7.10.5",
+    "@babel/preset-env": "^7.11.0",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.4"
+  }
+}
