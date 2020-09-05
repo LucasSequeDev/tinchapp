@@ -3,21 +3,23 @@ import { validationResult } from 'express-validator';
 
 
 const obtenerBases = async (req,res) => {
+    const basesTecnicasDB = await BaseTecnica.find({});
+
     return res.json({
-        'data': 'gg',
+        'data': basesTecnicasDB,
         'mensaje': 'Consulta realizada correctamente',
         'status': 200
     });
 }
 
 const obtenerBase = async (req,res) => {
-    /*let bt = new BaseTecnica();
+    const baseTecnicaDB = await BaseTecnica.findById(req.params.id);
 
     return res.json({
-        'data': await bt.listarTodos(),
+        'data': baseTecnicaDB,
         'mensaje': 'Consulta realizada correctamente',
         'status': 200
-    });*/
+    });
 }
 
 const crearBase = async (req,res) => {
@@ -41,8 +43,9 @@ const crearBase = async (req,res) => {
     // Guardamos el objeto en la BD
     newBaseTecnica.save((err,bt) => {
         if (err) {
-            console.log(err)
+            //console.log(err)
             return res.status(400).json({
+                'error': err.errors,
                 'mensaje': 'Error al crear el registro en la base de datos.',
                 'status': 400
             })
@@ -57,23 +60,59 @@ const crearBase = async (req,res) => {
 }
 
 const modificarBase = async (req,res) => {
-    /*let bt = new BaseTecnica();
+    // Validacion de errores en los parametros enviados
+    const errores = validationResult(req)
+    if (!errores.isEmpty()) {
+        return res.status(400).json({
+            'error': errores.array(),
+            'mensaje': 'Ocurrio un error en los parametros enviados.',
+            'status': 400
+        })
+    }
 
-    return res.json({
-        'data': await bt.listarTodos(),
-        'mensaje': 'Consulta realizada correctamente',
-        'status': 200
-    });*/
+    const newBaseTecnica = {
+        "SmartGroupID": req.body.SmartGroupID,
+        "BaseName": req.body.BaseName,
+        "Region": req.body.Region || null
+    }
+
+    // Actualizo el objeto BaseTecnica
+    await BaseTecnica.findByIdAndUpdate(req.params.id,newBaseTecnica,{new: true, upsert: true},(err,bt) => {
+        if (err) {
+            //console.log(err)
+            return res.status(400).json({
+                'error': err.errors,
+                'mensaje': 'Error al modificar el registro en la base de datos.',
+                'status': 400
+            })
+        }
+
+        return res.json({
+            'data': bt,
+            'mensaje': 'Consulta realizada correctamente',
+            'status': 200
+        });
+    });
 }
 
 const borrarBase = async (req,res) => {
-    /*let bt = new BaseTecnica();
+    // Actualizo el objeto BaseTecnica
+    await BaseTecnica.findByIdAndRemove(req.params.id,(err,bt) => {
+        if (err) {
+            //console.log(err)
+            return res.status(400).json({
+                'error': err.errors,
+                'mensaje': 'Error al borrar el registro en la base de datos.',
+                'status': 400
+            })
+        }
 
-    return res.json({
-        'data': await bt.listarTodos(),
-        'mensaje': 'Consulta realizada correctamente',
-        'status': 200
-    });*/
+        return res.json({
+            'data': bt,
+            'mensaje': 'Consulta realizada correctamente',
+            'status': 200
+        });
+    });
 }
 
 module.exports = {

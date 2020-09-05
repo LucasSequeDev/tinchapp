@@ -7,7 +7,7 @@ const router = Router();
 // Ruta para obtener todas las bases tecnicas
 router.get('/', obtenerBases)
 
-// Ruta para borrar obtener datos de una base tecnica
+// Ruta para obtener datos de una base tecnica
 router.get('/:id', obtenerBase)
 
 // Ruta para crear una base tecnica
@@ -15,6 +15,7 @@ router.post('/',[
     check("SmartGroupID","El SmartGroupID es obligatorio").notEmpty(),
     check("BaseName","El BaseName es obligatorio").notEmpty()
 ],crearBase)
+
 
 // Ruta para modificar una base tecnica
 router.put('/:id',[

@@ -1,4 +1,3 @@
-
 import dotenv from 'dotenv';
 import app from './config/server';
 import path from 'path'
