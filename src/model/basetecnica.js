@@ -5,6 +5,7 @@ const BaseTecnica = mongoose.Schema({
     SmartGroupID: {
         type: Number,
         required: true,
+        trim: true,
         unique: true
     },
     BaseName: {

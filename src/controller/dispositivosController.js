@@ -1,28 +1,28 @@
-import BaseTecnica from '../model/basetecnica'
+import dispositivo from '../model/Dispositivo'
 import { validationResult } from 'express-validator';
 
 
-const obtenerBases = async (req,res) => {
-    const basesTecnicasDB = await BaseTecnica.find({});
+const obtenerDispositivos = async (req,res) => {
+    const dispositivoDB = await dispositivo.find({});
 
     return res.json({
-        'data': basesTecnicasDB,
+        'data': dispositivoDB,
         'mensaje': 'Consulta realizada correctamente',
         'status': 200
     });
 }
 
-const obtenerBase = async (req,res) => {
-    const baseTecnicaDB = await BaseTecnica.findById(req.params.id);
+const obtenerDispositivo = async (req,res) => {
+    const dispositivoDB = await dispositivo.findById(req.params.id);
 
     return res.json({
-        'data': baseTecnicaDB,
+        'data': dispositivoDB,
         'mensaje': 'Consulta realizada correctamente',
         'status': 200
     });
 }
 
-const crearBase = async (req,res) => {
+const crearDispositivo = async (req,res) => {
     // Validacion de errores en los parametros enviados
     const errores = validationResult(req)
     if (!errores.isEmpty()) {
@@ -34,14 +34,14 @@ const crearBase = async (req,res) => {
     }
 
     // Creo el objeto BaseTecnica
-    const newBaseTecnica = await BaseTecnica({
-        "SmartGroupID": req.body.SmartGroupID,
-        "BaseName": req.body.BaseName,
-        "Region": req.body.Region || null
+    const newDispositivo = await dispositivo({
+        "HardwareIdentifier": req.body.HardwareIdentifier,
+        "Linea": req.body.Linea || null,
+        "UserName": req.body.UserName || null
     });
 
     // Guardamos el objeto en la BD
-    newBaseTecnica.save((err,db) => {
+    newDispositivo.save((err,db) => {
         if (err) {
             //console.log(err)
             return res.status(400).json({
@@ -59,7 +59,7 @@ const crearBase = async (req,res) => {
     })
 }
 
-const modificarBase = async (req,res) => {
+const modificarDispositivo = async (req,res) => {
     // Validacion de errores en los parametros enviados
     const errores = validationResult(req)
     if (!errores.isEmpty()) {
@@ -70,14 +70,14 @@ const modificarBase = async (req,res) => {
         })
     }
 
-    const newBaseTecnica = {
-        "SmartGroupID": req.body.SmartGroupID,
-        "BaseName": req.body.BaseName,
-        "Region": req.body.Region || null
+    const newDispositivo = {
+        "HardwareIdentifier": req.body.HardwareIdentifier,
+        "Linea": req.body.Linea || null,
+        "UserName": req.body.UserName || null
     }
 
     // Actualizo el objeto BaseTecnica
-    await BaseTecnica.findByIdAndUpdate(req.params.id,newBaseTecnica,{new: true, upsert: true},(err,db) => {
+    await dispositivo.findByIdAndUpdate(req.params.id,newDispositivo,{new: true, upsert: true},(err,db) => {
         if (err) {
             //console.log(err)
             return res.status(400).json({
@@ -95,9 +95,9 @@ const modificarBase = async (req,res) => {
     });
 }
 
-const borrarBase = async (req,res) => {
+const borrarDispositivo = async (req,res) => {
     // Actualizo el objeto BaseTecnica
-    await BaseTecnica.findByIdAndRemove(req.params.id,(err,db) => {
+    await dispositivo.findByIdAndRemove(req.params.id,(err,db) => {
         if (err) {
             //console.log(err)
             return res.status(400).json({
@@ -116,5 +116,5 @@ const borrarBase = async (req,res) => {
 }
 
 module.exports = {
-    obtenerBases,obtenerBase,crearBase,modificarBase,borrarBase
+    obtenerDispositivos, obtenerDispositivo, crearDispositivo, modificarDispositivo, borrarDispositivo
 }

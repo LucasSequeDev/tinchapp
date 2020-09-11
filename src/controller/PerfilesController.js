@@ -1,28 +1,28 @@
-import BaseTecnica from '../model/basetecnica'
+import perfil from '../model/Perfil'
 import { validationResult } from 'express-validator';
 
 
-const obtenerBases = async (req,res) => {
-    const basesTecnicasDB = await BaseTecnica.find({});
+const obtenerPerfiles = async (req,res) => {
+    const perfilDB = await perfil.find({});
 
     return res.json({
-        'data': basesTecnicasDB,
+        'data': perfilDB,
         'mensaje': 'Consulta realizada correctamente',
         'status': 200
     });
 }
 
-const obtenerBase = async (req,res) => {
-    const baseTecnicaDB = await BaseTecnica.findById(req.params.id);
+const obtenerPerfil = async (req,res) => {
+    const perfilDB = await perfil.findById(req.params.id);
 
     return res.json({
-        'data': baseTecnicaDB,
+        'data': perfilDB,
         'mensaje': 'Consulta realizada correctamente',
         'status': 200
     });
 }
 
-const crearBase = async (req,res) => {
+const crearPerfil = async (req,res) => {
     // Validacion de errores en los parametros enviados
     const errores = validationResult(req)
     if (!errores.isEmpty()) {
@@ -34,14 +34,13 @@ const crearBase = async (req,res) => {
     }
 
     // Creo el objeto BaseTecnica
-    const newBaseTecnica = await BaseTecnica({
-        "SmartGroupID": req.body.SmartGroupID,
-        "BaseName": req.body.BaseName,
-        "Region": req.body.Region || null
+    const newPerfil = await perfil({
+        "PerfilName": req.body.PerfilName,
+        "DeviceProfileID": req.body.DeviceProfileID
     });
 
     // Guardamos el objeto en la BD
-    newBaseTecnica.save((err,db) => {
+    newPerfil.save((err,db) => {
         if (err) {
             //console.log(err)
             return res.status(400).json({
@@ -59,7 +58,7 @@ const crearBase = async (req,res) => {
     })
 }
 
-const modificarBase = async (req,res) => {
+const modificarPerfil = async (req,res) => {
     // Validacion de errores en los parametros enviados
     const errores = validationResult(req)
     if (!errores.isEmpty()) {
@@ -70,14 +69,13 @@ const modificarBase = async (req,res) => {
         })
     }
 
-    const newBaseTecnica = {
-        "SmartGroupID": req.body.SmartGroupID,
-        "BaseName": req.body.BaseName,
-        "Region": req.body.Region || null
+    const newPerfil = {
+        "PerfilName": req.body.PerfilName,
+        "DeviceProfileID": req.body.LocationGroupID
     }
 
     // Actualizo el objeto BaseTecnica
-    await BaseTecnica.findByIdAndUpdate(req.params.id,newBaseTecnica,{new: true, upsert: true},(err,db) => {
+    await perfil.findByIdAndUpdate(req.params.id,newPerfil,{new: true, upsert: true},(err,db) => {
         if (err) {
             //console.log(err)
             return res.status(400).json({
@@ -95,9 +93,9 @@ const modificarBase = async (req,res) => {
     });
 }
 
-const borrarBase = async (req,res) => {
+const borrarPerfil = async (req,res) => {
     // Actualizo el objeto BaseTecnica
-    await BaseTecnica.findByIdAndRemove(req.params.id,(err,db) => {
+    await perfil.findByIdAndRemove(req.params.id,(err,db) => {
         if (err) {
             //console.log(err)
             return res.status(400).json({
@@ -116,5 +114,5 @@ const borrarBase = async (req,res) => {
 }
 
 module.exports = {
-    obtenerBases,obtenerBase,crearBase,modificarBase,borrarBase
+    obtenerPerfiles,obtenerPerfil,crearPerfil,modificarPerfil,borrarPerfil
 }

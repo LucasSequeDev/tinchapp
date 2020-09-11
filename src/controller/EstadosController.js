@@ -1,28 +1,28 @@
-import BaseTecnica from '../model/basetecnica'
+import estado from '../model/estado'
 import { validationResult } from 'express-validator';
 
 
-const obtenerBases = async (req,res) => {
-    const basesTecnicasDB = await BaseTecnica.find({});
+const obtenerEstados = async (req,res) => {
+    const estadoDB = await estado.find({});
 
     return res.json({
-        'data': basesTecnicasDB,
+        'data': estadoDB,
         'mensaje': 'Consulta realizada correctamente',
         'status': 200
     });
 }
 
-const obtenerBase = async (req,res) => {
-    const baseTecnicaDB = await BaseTecnica.findById(req.params.id);
+const obtenerEstado = async (req,res) => {
+    const estadoDB = await estado.findById(req.params.id);
 
     return res.json({
-        'data': baseTecnicaDB,
+        'data': estadoDB,
         'mensaje': 'Consulta realizada correctamente',
         'status': 200
     });
 }
 
-const crearBase = async (req,res) => {
+const crearEstado = async (req,res) => {
     // Validacion de errores en los parametros enviados
     const errores = validationResult(req)
     if (!errores.isEmpty()) {
@@ -34,14 +34,12 @@ const crearBase = async (req,res) => {
     }
 
     // Creo el objeto BaseTecnica
-    const newBaseTecnica = await BaseTecnica({
-        "SmartGroupID": req.body.SmartGroupID,
-        "BaseName": req.body.BaseName,
-        "Region": req.body.Region || null
+    const newEstado = await estado({
+        "Estado": req.body.Estado
     });
 
     // Guardamos el objeto en la BD
-    newBaseTecnica.save((err,db) => {
+    newEstado.save((err,db) => {
         if (err) {
             //console.log(err)
             return res.status(400).json({
@@ -59,7 +57,7 @@ const crearBase = async (req,res) => {
     })
 }
 
-const modificarBase = async (req,res) => {
+const modificarEstado = async (req,res) => {
     // Validacion de errores en los parametros enviados
     const errores = validationResult(req)
     if (!errores.isEmpty()) {
@@ -70,14 +68,12 @@ const modificarBase = async (req,res) => {
         })
     }
 
-    const newBaseTecnica = {
-        "SmartGroupID": req.body.SmartGroupID,
-        "BaseName": req.body.BaseName,
-        "Region": req.body.Region || null
+    const newEstado = {
+        "Estado": req.body.Estado
     }
 
     // Actualizo el objeto BaseTecnica
-    await BaseTecnica.findByIdAndUpdate(req.params.id,newBaseTecnica,{new: true, upsert: true},(err,db) => {
+    await estado.findByIdAndUpdate(req.params.id,newEstado,{new: true, upsert: true},(err,db) => {
         if (err) {
             //console.log(err)
             return res.status(400).json({
@@ -95,9 +91,9 @@ const modificarBase = async (req,res) => {
     });
 }
 
-const borrarBase = async (req,res) => {
+const borrarEstado = async (req,res) => {
     // Actualizo el objeto BaseTecnica
-    await BaseTecnica.findByIdAndRemove(req.params.id,(err,db) => {
+    await estado.findByIdAndRemove(req.params.id,(err,db) => {
         if (err) {
             //console.log(err)
             return res.status(400).json({
@@ -116,5 +112,5 @@ const borrarBase = async (req,res) => {
 }
 
 module.exports = {
-    obtenerBases,obtenerBase,crearBase,modificarBase,borrarBase
+    obtenerEstados,obtenerEstado,crearEstado,modificarEstado,borrarEstado
 }

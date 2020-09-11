@@ -1,28 +1,28 @@
-import BaseTecnica from '../model/basetecnica'
+import organizacion from '../model/organizacion'
 import { validationResult } from 'express-validator';
 
 
-const obtenerBases = async (req,res) => {
-    const basesTecnicasDB = await BaseTecnica.find({});
+const obtenerOrganizaciones = async (req,res) => {
+    const organizacionDB = await organizacion.find({});
 
     return res.json({
-        'data': basesTecnicasDB,
+        'data': organizacionDB,
         'mensaje': 'Consulta realizada correctamente',
         'status': 200
     });
 }
 
-const obtenerBase = async (req,res) => {
-    const baseTecnicaDB = await BaseTecnica.findById(req.params.id);
+const obtenerOrganizacion = async (req,res) => {
+    const organizacionDB = await organizacion.findById(req.params.id);
 
     return res.json({
-        'data': baseTecnicaDB,
+        'data': organizacionDB,
         'mensaje': 'Consulta realizada correctamente',
         'status': 200
     });
 }
 
-const crearBase = async (req,res) => {
+const crearOrganizacion = async (req,res) => {
     // Validacion de errores en los parametros enviados
     const errores = validationResult(req)
     if (!errores.isEmpty()) {
@@ -34,14 +34,14 @@ const crearBase = async (req,res) => {
     }
 
     // Creo el objeto BaseTecnica
-    const newBaseTecnica = await BaseTecnica({
-        "SmartGroupID": req.body.SmartGroupID,
-        "BaseName": req.body.BaseName,
-        "Region": req.body.Region || null
+    const newOrganizacion = await organizacion({
+        "OGName": req.body.OGName,
+        "CustomerCode": req.body.CustomerCode,
+        "LocationGroupID": req.body.LocationGroupID
     });
 
     // Guardamos el objeto en la BD
-    newBaseTecnica.save((err,db) => {
+    newOrganizacion.save((err,db) => {
         if (err) {
             //console.log(err)
             return res.status(400).json({
@@ -59,7 +59,7 @@ const crearBase = async (req,res) => {
     })
 }
 
-const modificarBase = async (req,res) => {
+const modificarOrganizacion = async (req,res) => {
     // Validacion de errores en los parametros enviados
     const errores = validationResult(req)
     if (!errores.isEmpty()) {
@@ -70,14 +70,14 @@ const modificarBase = async (req,res) => {
         })
     }
 
-    const newBaseTecnica = {
-        "SmartGroupID": req.body.SmartGroupID,
-        "BaseName": req.body.BaseName,
-        "Region": req.body.Region || null
+    const newOrganizacion = {
+        "OGName": req.body.OGName,
+        "CustomerCode": req.body.CustomerCode,
+        "LocationGroupID": req.body.LocationGroupID
     }
 
     // Actualizo el objeto BaseTecnica
-    await BaseTecnica.findByIdAndUpdate(req.params.id,newBaseTecnica,{new: true, upsert: true},(err,db) => {
+    await organizacion.findByIdAndUpdate(req.params.id,newOrganizacion,{new: true, upsert: true},(err,db) => {
         if (err) {
             //console.log(err)
             return res.status(400).json({
@@ -95,9 +95,9 @@ const modificarBase = async (req,res) => {
     });
 }
 
-const borrarBase = async (req,res) => {
+const borrarOrganizacion = async (req,res) => {
     // Actualizo el objeto BaseTecnica
-    await BaseTecnica.findByIdAndRemove(req.params.id,(err,db) => {
+    await organizacion.findByIdAndRemove(req.params.id,(err,db) => {
         if (err) {
             //console.log(err)
             return res.status(400).json({
@@ -116,5 +116,5 @@ const borrarBase = async (req,res) => {
 }
 
 module.exports = {
-    obtenerBases,obtenerBase,crearBase,modificarBase,borrarBase
+    obtenerOrganizaciones,obtenerOrganizacion,crearOrganizacion,modificarOrganizacion,borrarOrganizacion
 }
