@@ -9,9 +9,10 @@ import perfilRouter from '../routes/perfil';
 import organizacionRouter from '../routes/organizacion';
 import smartGroupRouter from '../routes/smartGroup';
 import modeloRouter from '../routes/modelo';
-
+import authRouter from '../routes/auth';
 class App {
     constructor() {
+        
         this.express = express();
         this.middlewares();
         this.routes();
@@ -31,7 +32,8 @@ class App {
         this.express.use('/api/perfil',perfilRouter);
         this.express.use('/api/organizacion',organizacionRouter),
         this.express.use('/api/smartGroup',smartGroupRouter),
-        this.express.use('/api/modelo',modeloRouter)
+        this.express.use('/api/modelo',modeloRouter),
+        this.express.use('/api/auth',authRouter)
     }
 }
 
