@@ -8,7 +8,7 @@ async function connect() {
             useUnifiedTopology: true,
             useCreateIndex: true
         });
-        console.log('[+] Base de datos: Conectada')
+        //console.log('[+] Base de datos: Conectada')
     } catch (error) {
         console.log('[-] Base de datos: Error')
     }
