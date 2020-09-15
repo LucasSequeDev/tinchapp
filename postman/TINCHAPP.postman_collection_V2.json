@@ -1,0 +1,1148 @@
+{
+	"info": {
+		"_postman_id": "807d95b4-2f88-49ec-879c-d433955021f5",
+		"name": "TINCHAPP",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "BasesTecnicas",
+			"item": [
+				{
+					"name": "/basetecnicas",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_basetecnicas}}",
+							"host": [
+								"{{url_basetecnicas}}"
+							]
+						},
+						"description": "Obtener todas las bases tecnicas guardadas en la base de datos."
+					},
+					"response": []
+				},
+				{
+					"name": "/basetecnicas/:id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url_basetecnicas}}5f53fac26854963d34cc7c13",
+							"host": [
+								"{{url_basetecnicas}}5f53fac26854963d34cc7c13"
+							]
+						},
+						"description": "A partir de un ID, obtener la informacion de la base tecnica."
+					},
+					"response": []
+				},
+				{
+					"name": "/basetecnicas",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Region\": \"AMBA\",\r\n    \"BaseName\": \"MEDRANO\",\r\n    \"SmartGroupID\": 231\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_basetecnicas}}",
+							"host": [
+								"{{url_basetecnicas}}"
+							]
+						},
+						"description": "Guardar una base tecnica nueva en la base de datos."
+					},
+					"response": []
+				},
+				{
+					"name": "/basetecnicas/:id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Region\": \"SUR\",\r\n    \"BaseName\": \"MEDRANO\",\r\n    \"SmartGroupID\": 231\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_basetecnicas}}5f53fc86eaff3e0a8ca065a6",
+							"host": [
+								"{{url_basetecnicas}}5f53fc86eaff3e0a8ca065a6"
+							]
+						},
+						"description": "Actualizar base tecnica en la base de datos."
+					},
+					"response": []
+				},
+				{
+					"name": "/basetecnicas/:id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url_basetecnicas}}5f53fac26854963d34cc7c13",
+							"host": [
+								"{{url_basetecnicas}}5f53fac26854963d34cc7c13"
+							]
+						},
+						"description": "Borrar una base tecnica de la base de datos."
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Dispositivos",
+			"item": [
+				{
+					"name": "/Dispositivo",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url_dispositivos}}",
+							"host": [
+								"{{url_dispositivos}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/Dispositivo/:id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url_dispositivos}}5f58f58f82dbee31c41698fd",
+							"host": [
+								"{{url_dispositivos}}5f58f58f82dbee31c41698fd"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/Dispositivo",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"HardwareIdentifier\": 355045090001468,\r\n    \"Linea\": 1162687339,\r\n    \"UserName\": \"jpavesi\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_dispositivos}}",
+							"host": [
+								"{{url_dispositivos}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/Dispositivo/:id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"HardwareIdentifier\": 355045090001468,\r\n    \"Linea\": 1162687339,\r\n    \"UserName\": \"mboiola\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_dispositivos}}5f58f58f82dbee31c41698fd",
+							"host": [
+								"{{url_dispositivos}}5f58f58f82dbee31c41698fd"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/Dispositivo/:id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_dispositivos}}5f58f58f82dbee31c41698fd",
+							"host": [
+								"{{url_dispositivos}}5f58f58f82dbee31c41698fd"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Usuarios",
+			"item": [
+				{
+					"name": "/usuario",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url_usuarios}}",
+							"host": [
+								"{{url_usuarios}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/usuario/:id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url_usuarios}}5f592f89d561e51ff4bf5b78",
+							"host": [
+								"{{url_usuarios}}5f592f89d561e51ff4bf5b78"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/usuario",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"UserName\": \"mserio\",\r\n    \"BaseTecnica\": \"NULL\"\r\n }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_usuarios}}",
+							"host": [
+								"{{url_usuarios}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/usuarios/:id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"UserName\": \"mserio\",\r\n    \"BaseTecnica\": \"NULL\"\r\n }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_usuarios}}5f592f89d561e51ff4bf5b78",
+							"host": [
+								"{{url_usuarios}}5f592f89d561e51ff4bf5b78"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/usuarios/:id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url_usuarios}}5f592f89d561e51ff4bf5b78",
+							"host": [
+								"{{url_usuarios}}5f592f89d561e51ff4bf5b78"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Estados",
+			"item": [
+				{
+					"name": "/estado",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url_estados}}",
+							"host": [
+								"{{url_estados}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/estado/:id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url_estados}}5f595cdfa0b6e73de4eb458b",
+							"host": [
+								"{{url_estados}}5f595cdfa0b6e73de4eb458b"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/estado",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Estado\": \"OK\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_estados}}",
+							"host": [
+								"{{url_estados}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/estado/:id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Estado\": \"PRUEBA2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_estados}}5f595d5d3845bf37c808d99c",
+							"host": [
+								"{{url_estados}}5f595d5d3845bf37c808d99c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/estado/:id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url_estados}}5f5966b76d956c5dc4b73af5",
+							"host": [
+								"{{url_estados}}5f5966b76d956c5dc4b73af5"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Modelos",
+			"item": [
+				{
+					"name": "/modelo",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url_modelos}}",
+							"host": [
+								"{{url_modelos}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/modelo/:id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url_modelos}}5f5a71e6c1b1522c98ad92c6",
+							"host": [
+								"{{url_modelos}}5f5a71e6c1b1522c98ad92c6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/modelo",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Modelo\": \"SM-A605GN\",\r\n    \"Marca\": \"Samsung\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_modelos}}",
+							"host": [
+								"{{url_modelos}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/modelo/:id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Modelo\": \"SM-A530F\",\r\n    \"Marca\": \"Samsung\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_modelos}}5f5a86b93f454a5df804f2a2",
+							"host": [
+								"{{url_modelos}}5f5a86b93f454a5df804f2a2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/modelo/:id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url_modelos}}5f5a71e6c1b1522c98ad92c6",
+							"host": [
+								"{{url_modelos}}5f5a71e6c1b1522c98ad92c6"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "/login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user\": \"mgrippo\",\r\n    \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_auth}}",
+							"host": [
+								"{{url_auth}}"
+							]
+						},
+						"description": "Loggearse a la aplicacion."
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "APIsConsola",
+			"item": [
+				{
+					"name": "GPS/:id",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "03047a03-3b21-494f-8aa5-3f8be671788e",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "e3ae392f-5ec3-430b-85dc-cd23189be544",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "Api2020!",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "API_Rest",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "aw-tenant-code",
+								"type": "text",
+								"value": "FR1+oZEeKSKIHkRi3DdlWSSX18YD6n/lh1fZCR2wunY="
+							}
+						],
+						"url": {
+							"raw": "https://mdmapp.cablevision.com.ar/api/mdm/devices/21956/gps",
+							"protocol": "https",
+							"host": [
+								"mdmapp",
+								"cablevision",
+								"com",
+								"ar"
+							],
+							"path": [
+								"api",
+								"mdm",
+								"devices",
+								"21956",
+								"gps"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeviceInfo/:id",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "03047a03-3b21-494f-8aa5-3f8be671788e",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "e3ae392f-5ec3-430b-85dc-cd23189be544",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "Api2020!",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "API_Rest",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "aw-tenant-code",
+								"type": "text",
+								"value": "FR1+oZEeKSKIHkRi3DdlWSSX18YD6n/lh1fZCR2wunY="
+							}
+						],
+						"url": {
+							"raw": "https://mdmapp.cablevision.com.ar/api/mdm/devices/21956",
+							"protocol": "https",
+							"host": [
+								"mdmapp",
+								"cablevision",
+								"com",
+								"ar"
+							],
+							"path": [
+								"api",
+								"mdm",
+								"devices",
+								"21956"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SmartGroupsList",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "03047a03-3b21-494f-8aa5-3f8be671788e",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "e3ae392f-5ec3-430b-85dc-cd23189be544",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "Api2020!",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "API_Rest",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "aw-tenant-code",
+								"type": "text",
+								"value": "FR1+oZEeKSKIHkRi3DdlWSSX18YD6n/lh1fZCR2wunY="
+							}
+						],
+						"url": {
+							"raw": "https://mdmapp.cablevision.com.ar/api/mdm/smartgroups/search",
+							"protocol": "https",
+							"host": [
+								"mdmapp",
+								"cablevision",
+								"com",
+								"ar"
+							],
+							"path": [
+								"api",
+								"mdm",
+								"smartgroups",
+								"search"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SmartGroupID/:id",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "03047a03-3b21-494f-8aa5-3f8be671788e",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "e3ae392f-5ec3-430b-85dc-cd23189be544",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "Api2020!",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "API_Rest",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "aw-tenant-code",
+								"type": "text",
+								"value": "FR1+oZEeKSKIHkRi3DdlWSSX18YD6n/lh1fZCR2wunY="
+							}
+						],
+						"url": {
+							"raw": "https://mdmapp.cablevision.com.ar/api/mdm/smartgroups/371/apps",
+							"protocol": "https",
+							"host": [
+								"mdmapp",
+								"cablevision",
+								"com",
+								"ar"
+							],
+							"path": [
+								"api",
+								"mdm",
+								"smartgroups",
+								"371",
+								"apps"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SmartGroupDevices/:id",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "03047a03-3b21-494f-8aa5-3f8be671788e",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "e3ae392f-5ec3-430b-85dc-cd23189be544",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "Api2020!",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "API_Rest",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "aw-tenant-code",
+								"type": "text",
+								"value": "FR1+oZEeKSKIHkRi3DdlWSSX18YD6n/lh1fZCR2wunY="
+							}
+						],
+						"url": {
+							"raw": "https://mdmapp.cablevision.com.ar/api/mdm/smartgroups/257/devices",
+							"protocol": "https",
+							"host": [
+								"mdmapp",
+								"cablevision",
+								"com",
+								"ar"
+							],
+							"path": [
+								"api",
+								"mdm",
+								"smartgroups",
+								"257",
+								"devices"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ProfileList",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "03047a03-3b21-494f-8aa5-3f8be671788e",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "e3ae392f-5ec3-430b-85dc-cd23189be544",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "Api2020!",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "API_Rest",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "aw-tenant-code",
+								"type": "text",
+								"value": "FR1+oZEeKSKIHkRi3DdlWSSX18YD6n/lh1fZCR2wunY="
+							}
+						],
+						"url": {
+							"raw": "https://mdmapp.cablevision.com.ar/api/mdm/profiles/search",
+							"protocol": "https",
+							"host": [
+								"mdmapp",
+								"cablevision",
+								"com",
+								"ar"
+							],
+							"path": [
+								"api",
+								"mdm",
+								"profiles",
+								"search"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AplicarPerfil/:id",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "ce1a0ee0-7e5f-43b1-91a9-874bf292d443",
+								"exec": [
+									"var companies = pm.environment.get(\"companies\");",
+									"",
+									"if (!companies) {",
+									"    companies = [",
+									"        \"R28K41XGPDK\",",
+									"        \"R28K41XH12M\"",
+									"    ];",
+									"}",
+									"",
+									"var currentCompany = companies.shift();",
+									"pm.environment.set(\"company\", currentCompany);",
+									"pm.environment.set(\"companies\", companies);"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "20a8a438-c078-4f7c-b237-32a22d213bcf",
+								"exec": [
+									"var companies = pm.environment.get(\"companies\");",
+									"",
+									"if (companies && companies.length > 0) {",
+									"    postman.setNextRequest(\"https://mdmapp.cablevision.com.ar/api/mdm/profiles/171/install\");",
+									"} else {",
+									"    postman.setNextRequest(null);",
+									"}",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "API_Rest",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "Api!2020",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "aw-tenant-code",
+								"type": "text",
+								"value": "FR1+oZEeKSKIHkRi3DdlWSSX18YD6n/lh1fZCR2wunY="
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"SerialNumber\": \"{{company}}\"\r\n}\r\n\r\n",
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": {
+							"raw": "https://mdmapp.cablevision.com.ar/api/mdm/profiles/ID/install",
+							"protocol": "https",
+							"host": [
+								"mdmapp",
+								"cablevision",
+								"com",
+								"ar"
+							],
+							"path": [
+								"api",
+								"mdm",
+								"profiles",
+								"171",
+								"install"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AgregarTAG/:id",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "API_Rest",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "Api!2020",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "aw-tenant-code",
+								"type": "text",
+								"value": "FR1+oZEeKSKIHkRi3DdlWSSX18YD6n/lh1fZCR2wunY="
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"BulkValues\": {\r\n    \"Value\": [\"26538\",\"24450\"]\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://mdmapp.cablevision.com.ar/api/mdm/tags/ID/adddevices",
+							"protocol": "https",
+							"host": [
+								"mdmapp",
+								"cablevision",
+								"com",
+								"ar"
+							],
+							"path": [
+								"api",
+								"mdm",
+								"tags",
+								"10001",
+								"adddevices"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

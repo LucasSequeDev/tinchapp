@@ -36,7 +36,8 @@ const crearUsuario = async (req,res) => {
     // Creo el objeto BaseTecnica
     const newUsuario = await usuario({
         "UserName": req.body.UserName,
-        "BaseTecnica": req.body.BaseTecnica || null
+        "Nombre": req.body.Nombre,
+        "Apellido": req.body.Apellido
     });
 
     // Guardamos el objeto en la BD

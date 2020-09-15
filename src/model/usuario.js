@@ -8,10 +8,16 @@ const usuario = mongoose.Schema({
         unique: true,
         trim: true
     },
-    BaseTecnica: {
+    Nombre: {
         type: String,
+        required: true,
         trim: true
     },
+    Apellido: {
+        type: String,
+        required: true,
+        trim: true
+    }
 })
 
 usuario.plugin(uniqueValidator, { message: 'El {PATH} ya existe.' })

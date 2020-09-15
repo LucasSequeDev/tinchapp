@@ -28,9 +28,17 @@ const dispositivo = mongoose.Schema({
         trim: true,
         unique: true
     },
-    UserName: {
-        type: String,
-        trim: true
+    UsuarioID: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "usuario"
+    },
+    ModeloID: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "modelo"
+    },
+    EstadoID: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "estado"
     }
 })
 
