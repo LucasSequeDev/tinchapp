@@ -16,7 +16,11 @@ const BaseTecnica = mongoose.Schema({
     Region: {
         type: String,
         trim: true
-    }
+    },
+    UserNameID: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "usuario"
+    },
 })
 
 BaseTecnica.plugin(uniqueValidator, { message: 'El {PATH} ya existe.' })
