@@ -15,6 +15,12 @@ const obtenerEstados = async (req,res) => {
 const obtenerEstado = async (req,res) => {
     const estadoDB = await estado.findById(req.params.id);
 
+    if (!estadoDB) {
+        return res.status(404).json({
+            'mensaje': 'No se encontro estado.',
+            'status': 404
+        });
+    }
     return res.json({
         'data': estadoDB,
         'mensaje': 'Consulta realizada correctamente',

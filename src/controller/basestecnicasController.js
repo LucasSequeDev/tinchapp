@@ -15,6 +15,12 @@ const obtenerBases = async (req,res) => {
 const obtenerBase = async (req,res) => {
     const baseTecnicaDB = await BaseTecnica.findById(req.params.id);
 
+    if (!baseTecnicaDB) {
+        return res.status(404).json({
+            'mensaje': 'No se encontro base tecnica.',
+            'status': 404
+        });
+    }
     return res.json({
         'data': baseTecnicaDB,
         'mensaje': 'Consulta realizada correctamente',

@@ -15,6 +15,12 @@ const obtenerDispositivos = async (req,res) => {
 const obtenerDispositivo = async (req,res) => {
     const dispositivoDB = await dispositivo.findById(req.params.id);
 
+    if (!dispositivoDB) {
+        return res.status(404).json({
+            'mensaje': 'No se encontro dipositivo.',
+            'status': 404
+        });
+    }
     return res.json({
         'data': dispositivoDB,
         'mensaje': 'Consulta realizada correctamente',

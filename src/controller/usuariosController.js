@@ -15,6 +15,12 @@ const obtenerUsuarios = async (req,res) => {
 const obtenerUsuario = async (req,res) => {
     const usuarioDB = await usuario.findById(req.params.id);
 
+    if (!usuarioDB) {
+        return res.status(404).json({
+            'mensaje': 'No se encontro usuario.',
+            'status': 404
+        });
+    }
     return res.json({
         'data': usuarioDB,
         'mensaje': 'Consulta realizada correctamente',
