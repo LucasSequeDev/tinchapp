@@ -15,6 +15,12 @@ const obtenermodelos = async (req,res) => {
 const obtenermodelo = async (req,res) => {
     const modeloDB = await modelo.findById(req.params.id);
 
+    if (!modeloDB) {
+        return res.status(404).json({
+            'mensaje': 'No se encontro modelo.',
+            'status': 404
+        });
+    }
     return res.json({
         'data': modeloDB,
         'mensaje': 'Consulta realizada correctamente',
