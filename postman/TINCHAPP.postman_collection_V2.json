@@ -576,12 +576,12 @@
 							"basic": [
 								{
 									"key": "password",
-									"value": "Api2020!",
+									"value": "",
 									"type": "string"
 								},
 								{
 									"key": "username",
-									"value": "API_Rest",
+									"value": "",
 									"type": "string"
 								}
 							]
@@ -649,12 +649,12 @@
 							"basic": [
 								{
 									"key": "password",
-									"value": "Api2020!",
+									"value": "",
 									"type": "string"
 								},
 								{
 									"key": "username",
-									"value": "API_Rest",
+									"value": "",
 									"type": "string"
 								}
 							]
@@ -721,12 +721,12 @@
 							"basic": [
 								{
 									"key": "password",
-									"value": "Api2020!",
+									"value": "",
 									"type": "string"
 								},
 								{
 									"key": "username",
-									"value": "API_Rest",
+									"value": "",
 									"type": "string"
 								}
 							]
@@ -793,12 +793,12 @@
 							"basic": [
 								{
 									"key": "password",
-									"value": "Api2020!",
+									"value": "",
 									"type": "string"
 								},
 								{
 									"key": "username",
-									"value": "API_Rest",
+									"value": "",
 									"type": "string"
 								}
 							]
@@ -866,12 +866,12 @@
 							"basic": [
 								{
 									"key": "password",
-									"value": "Api2020!",
+									"value": "",
 									"type": "string"
 								},
 								{
 									"key": "username",
-									"value": "API_Rest",
+									"value": "",
 									"type": "string"
 								}
 							]
@@ -939,12 +939,12 @@
 							"basic": [
 								{
 									"key": "password",
-									"value": "Api2020!",
+									"value": "",
 									"type": "string"
 								},
 								{
 									"key": "username",
-									"value": "API_Rest",
+									"value": "",
 									"type": "string"
 								}
 							]
@@ -1030,12 +1030,12 @@
 							"basic": [
 								{
 									"key": "username",
-									"value": "API_Rest",
+									"value": "",
 									"type": "string"
 								},
 								{
 									"key": "password",
-									"value": "Api!2020",
+									"value": "",
 									"type": "string"
 								}
 							]
@@ -1088,12 +1088,12 @@
 							"basic": [
 								{
 									"key": "username",
-									"value": "API_Rest",
+									"value": "",
 									"type": "string"
 								},
 								{
 									"key": "password",
-									"value": "Api!2020",
+									"value": "",
 									"type": "string"
 								}
 							]
