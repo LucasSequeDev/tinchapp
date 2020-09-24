@@ -575,13 +575,13 @@
 							"type": "basic",
 							"basic": [
 								{
-									"key": "password",
-									"value": "Api2020!",
+									"key": "username",
+									"value": usernameAPI,
 									"type": "string"
 								},
 								{
-									"key": "username",
-									"value": "API_Rest",
+									"key": "password",
+									"value": passwordAPI,
 									"type": "string"
 								}
 							]
@@ -648,13 +648,13 @@
 							"type": "basic",
 							"basic": [
 								{
-									"key": "password",
-									"value": "Api2020!",
+									"key": "username",
+									"value": usernameAPI,
 									"type": "string"
 								},
 								{
-									"key": "username",
-									"value": "API_Rest",
+									"key": "password",
+									"value": passwordAPI,
 									"type": "string"
 								}
 							]
@@ -720,13 +720,13 @@
 							"type": "basic",
 							"basic": [
 								{
-									"key": "password",
-									"value": "Api2020!",
+									"key": "username",
+									"value": usernameAPI,
 									"type": "string"
 								},
 								{
-									"key": "username",
-									"value": "API_Rest",
+									"key": "password",
+									"value": passwordAPI,
 									"type": "string"
 								}
 							]
@@ -792,13 +792,13 @@
 							"type": "basic",
 							"basic": [
 								{
-									"key": "password",
-									"value": "Api2020!",
+									"key": "username",
+									"value": usernameAPI,
 									"type": "string"
 								},
 								{
-									"key": "username",
-									"value": "API_Rest",
+									"key": "password",
+									"value": passwordAPI,
 									"type": "string"
 								}
 							]
@@ -865,13 +865,13 @@
 							"type": "basic",
 							"basic": [
 								{
-									"key": "password",
-									"value": "Api2020!",
+									"key": "username",
+									"value": usernameAPI,
 									"type": "string"
 								},
 								{
-									"key": "username",
-									"value": "API_Rest",
+									"key": "password",
+									"value": passwordAPI,
 									"type": "string"
 								}
 							]
@@ -938,13 +938,13 @@
 							"type": "basic",
 							"basic": [
 								{
-									"key": "password",
-									"value": "Api2020!",
+									"key": "username",
+									"value": usernameAPI,
 									"type": "string"
 								},
 								{
-									"key": "username",
-									"value": "API_Rest",
+									"key": "password",
+									"value": passwordAPI,
 									"type": "string"
 								}
 							]
@@ -1030,12 +1030,12 @@
 							"basic": [
 								{
 									"key": "username",
-									"value": "API_Rest",
+									"value": usernameAPI,
 									"type": "string"
 								},
 								{
 									"key": "password",
-									"value": "Api!2020",
+									"value": passwordAPI,
 									"type": "string"
 								}
 							]
@@ -1088,12 +1088,12 @@
 							"basic": [
 								{
 									"key": "username",
-									"value": "API_Rest",
+									"value": usernameAPI,
 									"type": "string"
 								},
 								{
 									"key": "password",
-									"value": "Api!2020",
+									"value": passwordAPI,
 									"type": "string"
 								}
 							]
@@ -1139,6 +1139,56 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "AllDevices",
+						"request": {
+							"auth": {
+								"type": "basic",
+								"basic": [
+									{
+										"key": "username",
+										"value": usernameAPI,
+										"type": "string"
+									},
+									{
+										"key": "password",
+										"value": passwordAPI,
+										"type": "string"
+									}
+								]
+							},
+							"method": "POST",
+							"header": [
+								{
+									"key": "Content-Type",
+									"type": "text",
+									"value": "application/json"
+								},
+								{
+									"key": "aw-tenant-code",
+									"type": "text",
+									"value": "FR1+oZEeKSKIHkRi3DdlWSSX18YD6n/lh1fZCR2wunY="
+								}
+							],
+							"url": {
+								"raw": "https://mdmapp.cablevision.com.ar/api/mdm/devices/search",
+								"protocol": "https",
+								"host": [
+									"mdmapp",
+									"cablevision",
+									"com",
+									"ar"
+								],
+								"path": [
+									"api",
+									"mdm",
+									"devices",
+									"search"
+								]
+							}
+						},
+						"response": []
 				}
 			],
 			"protocolProfileBehavior": {}
